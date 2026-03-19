@@ -1,57 +1,25 @@
+<!--Get the samples from https://www.adobe.com/go/pdfembedapi_samples-->
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PDF Viewer</title>
-  <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    #adobe-dc-view {
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
+ <title>Adobe Acrobat Services PDF Embed API Sample</title>
+ <meta charset="utf-8"/>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+ <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
-<body>
-  <div id="adobe-dc-view"></div>
-
-  <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
-  <script>
-    document.addEventListener("adobe_dc_view_sdk.ready", function () {
-      const adobeDCView = new AdobeDC.View({
-        clientId: "8352c9c2aeaa4b9b9d82b56440d1a017",
-        divId: "adobe-dc-view"
-      });
-
-      adobeDCView.previewFile(
-        {
-          content: {
-            location: {
-              url: "https://raw.githubusercontent.com/ConfusoesCriativas/pdfviewer/main/Explorando%20e%20refletindo%20UT2.pdf"
-            }
-          },
-          metaData: {
-            fileName: "Explorando e refletindo UT2.pdf"
-          }
-        },
-        {
-          embedMode: "FULL_WINDOW",
-          defaultViewMode: "FIT_WIDTH",
-          showDownloadPDF: true,
-          showPrintPDF: true,
-          showZoomControl: true,
-          showThumbnails: false,
-          showBookmarks: false
-        }
-      );
+<body style="margin: 0px">
+ <div id="adobe-dc-view"></div>
+ <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+ <script type="text/javascript">
+    document.addEventListener("adobe_dc_view_sdk.ready", function()
+    {
+        var adobeDCView = new AdobeDC.View({clientId: "8352c9c2aeaa4b9b9d82b56440d1a017", divId: "adobe-dc-view"});
+        adobeDCView.previewFile(
+       {
+          content:   {location: {url: "https://raw.githubusercontent.com/ConfusoesCriativas/pdfviewer/main/Explorando%20e%20refletindo%20UT2.pdf"}},
+          metaData: {fileName: "UT2.pdf"}
+       });
     });
-  </script>
+ </script>
 </body>
 </html>
